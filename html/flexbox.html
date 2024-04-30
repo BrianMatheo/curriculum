@@ -22,6 +22,11 @@
             align-items: center;
             height: 200px;
         }
+
+        body{
+            background-color: aqua;
+        }
+
         .element{
             width: 20%;
             height: 50px;
@@ -40,9 +45,36 @@
         #three{
             background-color: chocolate;
         }
+        /* media querys*/
+
+        @media screen and (max-Width:1200px){
+            body{
+                background-color: aliceblue;
+            }
+            h1{
+                color: orange;
+            }
+        }
+        @media screen and (max-Width:800px){
+            body{
+                background-color: blueviolet;
+            }
+        }
+
+        @media screen and (max-Width: 600px) {
+            body{
+                background-color: black;
+            }
+            #two{
+                background-color: darkblue;
+                order: 2;
+            }
+        }
+
     </style>
 </head>
 <body>
+    <h1>Hola</h1>
     <div class="container">
         <div class="element" id="one">#1</div>
         <div class="element" id="two">#2</div>

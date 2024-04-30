@@ -53,6 +53,7 @@ nav{
 .enlaces-header{
     font-weight: 300;
     margin: auto;
+    transition: all ease-in-out .6s;
 }
 
 .nav .enlaces-header a{
@@ -69,6 +70,32 @@ nav{
     border-color: #e3d3;
     transition: all ease-in-out .6s;
 }
+
+.hamburguer{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    z-index: 100;
+    display: none;
+}
+
+.hamburguer > i{
+    font-size: 25px;
+    line-height: 80px;
+}
+
+@media  screen and (max-Width:600px){
+    .hamburguer{
+        display: block;
+    }
+    .enlaces-header{
+        display: none;
+    }
+}
+
+
 
 .titulospro{
     text-align: left;
@@ -322,4 +349,81 @@ nav{
 
 .certificate a:hover {
     color: #fff;
+}
+
+
+/* ################################## MEDIA QUERYS ################################## */
+
+@media screen and (max-Width:600px) {
+    h1{
+        font-size: 25px;
+    }
+    .contenido-header{
+        width: 100%;
+        height: 500px;   
+    }
+    .contenido-header > img{
+        width: 120px;
+        height: 120px;
+        animation: ease-in animacion 0.5s;
+        margin: 20px 0;
+    }
+
+    .articulo, .articulo, .certificate, .skills{
+        width: 90%;
+    }
+    .skills{
+        margin-bottom: 20px;
+    }
+    .articulo, .experience, .content-skills{
+        margin-bottom: 20px;
+    }
+    .content-skills{
+        margin-bottom: 20px;
+    }
+
+    .content-certificados{
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .certificate{
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .enlaces-header{
+        position: fixed;
+        background-color: #d03d3d;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        clip-path: circle(0.0% at 0 0);
+    }
+    .nav .enlaces-header a{
+        color: white;
+        background-color: #cf6c6c;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-top: 20px;
+        width: 50%;
+        text-align: center;
+    }
+
+    .nav .enlaces-header a:hover{
+        color: #d03d3d;
+        background-color: #fff;
+    }
+
+    .hamburguer{
+        display: block;
+    }
+
+    .nav .hamburgueropen{
+        clip-path: circle(150% at 0 0) ;
+    }
 }
