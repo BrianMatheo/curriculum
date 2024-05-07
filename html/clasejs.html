@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style2.css">
+    <title>Document</title>
+</head>
+<body onload="load_page()">
+
+    <section class="user">
+    <div class="jmk">
+        <div class="jmk">
+            <label for="name">Name</label>
+            <input type="text" id="name" autocomplete="off" placeholder="Write the name">
+        </div>
+        <div class="jmk">
+            <label for="last_name">LastName</label>
+            <input type="text" id="last_name" autocomplete="off" placeholder="Write the last name">
+        </div>
+        <button onclick="send_info()">ENVIAR</button>
+        <div id="print">
+        </div>
+    </div>
+    </section>
+    <section class="email">
+        <div class="jmk">
+            <div class="jmk">
+                <label for="password">Password</label>
+                <input type="password" id="password" autocomplete="off" placeholder="Write the password">
+            </div>
+            <div class="jmk">
+                <label for="last_name">Confirm Password</label>
+                <input type="password" id="confirm_password" autocomplete="off" placeholder="Confirm the password">
+            </div>
+            <button onclick="send_infopassword()">ENVIAR</button>
+            <div id="print_password">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Archivos de js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/functions.js"></script>
+    <!-- <script src="../js/sweetalert2@11.js"></script> -->
+    <!-- <script>
+        alert("hola soy un alert de html");
+    </script> -->
+</body>
+</html>
