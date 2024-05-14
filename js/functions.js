@@ -122,3 +122,71 @@ function send_infopassword(){
     console.log(password);
 }
 
+//ARRAYS
+
+var dias_sem = ["lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+var array_num = [1,2,3,4,5,6,7,8,9];
+var array_mix = [1,2.5,"abc"];
+var array_mul = [
+    {name: "Wilder", age:32, color: "Green"},
+    {name: "Anyir", age:33, color: "White"},
+    {name: "Celeste", age:3, color: "Black"},
+    {name: "Antonella", age:2, color: "Gray"}
+]
+
+var json_ejm = {
+  name: "Brian Matheo",
+  lasname: "Alvarez Pacheco",
+  phone: "3175364025",
+  email: "bmalvarezp@ufpso.edu.co"
+}
+
+console.log(dias_sem);
+console.log(array_num);
+console.log(array_mix);
+console.log(array_mul);
+console.log(json_ejm);
+
+for(let i=0;i<dias_sem.length;i++){
+  console.log(dias_sem[i]);
+}
+var j=0;
+
+while(j<array_num.length){
+  console.log(array_num[j]);
+  j++
+}
+
+var acum = 0;
+
+for(let k=0;k < array_num.length;k++){
+  acum += array_num[k];
+}
+console.log(acum)
+
+var sum = 0;
+
+for(let h=0 ; h<array_mul.length;h++){
+  sum += array_mul[h].age;
+}
+
+document.getElementById('sum').innerText = "El valor de la suma es: " + sum;
+document.getElementById('valores').value = array_num;
+
+var array_ejm = [1,2,3,4,5,6,7,8,9];
+
+function limpiar(){
+  document.getElementById("valores").value = " ";
+}
+
+
+
+function agregar(){
+  var addemer = document.getElementById("agregador").value;
+  array_ejm.push(addemer);
+  document.getElementById("valores").value = array_ejm;
+}
+
+function eliminar1(){
+  document.getElementById("valores").value = array_ejm.pop();
+}
