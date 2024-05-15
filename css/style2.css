@@ -35,3 +35,13 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.button-agregador{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+}

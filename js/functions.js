@@ -176,10 +176,9 @@ document.getElementById('valores').value = array_num;
 var array_ejm = [1,2,3,4,5,6,7,8,9];
 
 function limpiar(){
-  document.getElementById("valores").value = " ";
+  document.getElementById("valores").value = "";
+  document.getElementById("agregador").value = "";
 }
-
-
 
 function agregar(){
   var addemer = document.getElementById("agregador").value;
@@ -187,6 +186,26 @@ function agregar(){
   document.getElementById("valores").value = array_ejm;
 }
 
+function agregar2(){
+  var addemer = document.getElementById("agregador").value;
+  array_ejm.unshift(addemer);
+  document.getElementById("valores").value = array_ejm;
+}
+
 function eliminar1(){
-  document.getElementById("valores").value = array_ejm.pop();
+  var addemer = document.getElementById("valores").value;
+  array_ejm.shift(addemer);
+  document.getElementById("valores").value = array_ejm;
+}
+
+function eliminar2(){
+  var addemer = document.getElementById("valores").value;
+  array_ejm.pop(addemer);
+  document.getElementById("valores").value = array_ejm;
+}
+
+function reverse(){
+  var addemer = document.getElementById("valores").value;
+  array_ejm.reverse(addemer);
+  document.getElementById("valores").value = array_ejm;
 }
