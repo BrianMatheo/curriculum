@@ -25,12 +25,13 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    height: auto;
 }
 
 .jmk{
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 5px;
     align-items: center;
     justify-content: center;

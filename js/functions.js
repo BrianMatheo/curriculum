@@ -46,6 +46,17 @@ function load_page(){
         showConfirmButton: false,
         timer: 1200
       });
+      document.getElementById("fecha").value = new Date();
+      let date = new Date();
+      document.getElementById("dia").innerText = date.getDay();
+      document.getElementById("date").innerText = date.getDate();        
+      document.getElementById("mes").innerText = date.getMonth();       
+      document.getElementById("hora").innerText = date.getHours();         
+      document.getElementById("minutos").innerText = date.getMinutes();     
+      document.getElementById("segundos").innerText = date.getSeconds();        // 10
+      document.getElementById("milisegundos").innerText = date.getMilliseconds();   
+      document.getElementById("horario").innerText = date.getTimezoneOffset(); 
+      document.getElementById("tiempo").innerText = date.getTime();          
 }
 
 function send_info(){
@@ -193,19 +204,86 @@ function agregar2(){
 }
 
 function eliminar1(){
-  var addemer = document.getElementById("valores").value;
-  array_ejm.shift(addemer);
+  array_ejm.shift(array_ejm);
   document.getElementById("valores").value = array_ejm;
 }
 
 function eliminar2(){
-  var addemer = document.getElementById("valores").value;
-  array_ejm.pop(addemer);
+  array_ejm.pop(array_ejm);
   document.getElementById("valores").value = array_ejm;
 }
 
 function reverse(){
-  var addemer = document.getElementById("valores").value;
-  array_ejm.reverse(addemer);
+  array_ejm.reverse(array_ejm);
   document.getElementById("valores").value = array_ejm;
+}
+
+var uno = [];
+
+for(let i=0;i<array_ejm.length;i++){
+  uno.push(array_ejm[i]);
+}
+console.log(uno);
+
+function fibonacci(){
+  var fibo = document.getElementById("fibo").value;
+  if(isNaN(fibo)){
+    alert("eso no es un numero");
+  }else{
+    if(fibo<=1){
+      alert("eso es muy poco para fibonacci");
+    }else{
+      let a=0, b=1, sum=a+b;
+      var array = [0,1,1];
+      for(let i=3;i<fibo;i++){
+        a = b;
+        b = sum;
+        sum = a + b;
+        array.push(sum);
+      }
+      document.getElementById("retomar").value = array;
+    }
+
+  }
+}
+
+function send_name(){
+  let name_one = document.getElementById("name_one").value;
+  let name_two = document.getElementById("name_two").value;
+  let search_var = document.getElementById("search_var").value;
+  let name_com = name_one.toUpperCase() +" "+name_two.toUpperCase();
+  // let variable = name_com.lastIndexOF("A");
+  let variable = name_com.charAt(search_var);
+  if(name_one.length=0 && name){
+
+  }
+  if(search_var <= name_com.length && search_var.length != 0){
+    document.getElementById("print_name").innerText = "La letra correspondiente al #" + search_var + " es: " + variable;
+    Swal.fire(variable)
+  }
+  else if(isNaN(search_var)){
+    Swal.fire({
+        title: "no es un numero",
+        text: "atontao",
+        icon: "question"
+      });
+      document.getElementById("print_name").innerText = "";
+  }
+  else if(search_var.length == 0){
+    Swal.fire({
+      title: "error",
+      text: "no tiene valor",
+      icon: "question"
+    });
+    document.getElementById("print_name").innerText = "";
+  }
+  else{
+    Swal.fire({
+        title: "te pasaste",
+        text: "numero muy alto",
+        icon: "question"
+      });
+    document.getElementById("print_name").innerText = "";
+  }
+  
 }
